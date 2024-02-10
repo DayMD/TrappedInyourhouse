@@ -1,6 +1,4 @@
-import sys
 import random as rnd
-#import colorama
 from colorama import Fore
 
 scandal = 0
