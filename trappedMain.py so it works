@@ -3,12 +3,11 @@ import random as rnd
 scandal = 0
 obsession = 10
 food = 10
-playing = True
+
 
 def main():
     intro()
     gameLoop()
-    
 
 def intro():
     print("Trapped in your House because of Hans Christian Andersen!")
@@ -18,6 +17,12 @@ def intro():
     print("Why does he have camping supplies with him?")
 
 def gameLoop():
+    
+    global scandal
+    global obsession
+    global food
+    playing = True
+    
     while playing:
         print("scandal: " + str(scandal))
         print("obsession: " + str(obsession))
@@ -26,12 +31,15 @@ def gameLoop():
         if scandal == 10:
             print("The scandal has become too much to bear, you are forced to sell your house and run away. Hans moves in and squats there")
             playing = False
+            break
         if obsession == 0:
             print("Too much has been happening for Hans to focus on you, he wanders off following a new obsession")
             playing = False
+            break
         if food == 0:
             print("You run out of food and starve to death, your friends host a small but tasteful funeral, Hans sends a card but does not attend")
-            playing == False
+            playing = False
+            break
         
         input("press enter to roll")
         
@@ -45,6 +53,9 @@ def gameLoop():
             anticsRolls()
 
 def desperationRolls(): #1/2
+    global scandal
+    global obsession
+    global food
     print("Your desperation mounts")
     
     roll = rnd.randint(1,6)
@@ -68,6 +79,9 @@ def desperationRolls(): #1/2
         food -= 1
 
 def curtainRolls(): #3/4
+    global scandal
+    global obsession
+    global food
     print("You take a peek through the curtains")
     
     roll = rnd.randint(1,6)
@@ -93,6 +107,9 @@ def curtainRolls(): #3/4
         obsession += 1
 
 def anticsRolls(): #5/6
+    global scandal
+    global obsession
+    global food
     print("Hans is up to something")
     
     roll = rnd.randint(1,6)
