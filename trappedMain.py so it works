@@ -22,6 +22,14 @@ def gameLoop():
     global scandal
     global obsession
     global food
+    
+    if scandal < 0:
+        scandal = 0
+    if obsession > 10:
+        obsession = 10
+    if food > 10:
+        food = 10
+    
     playing = True
     
     while playing:
