@@ -23,6 +23,16 @@ def gameLoop():
         print("obsession: " + str(obsession))
         print("food: " + str(food))
         
+        if scandal == 10:
+            print("The scandal has become too much to bear, you are forced to sell your house and run away. Hans moves in and squats there")
+            playing = False
+        if obsession == 0:
+            print("Too much has been happening for Hans to focus on you, he wanders off following a new obsession")
+            playing = False
+        if food == 0:
+            print("You run out of food and starve to death, your friends host a small but tasteful funeral, Hans sends a card but does not attend")
+            playing == False
+        
         input("press enter to roll")
         
         roll = rnd.randint(1,6)
