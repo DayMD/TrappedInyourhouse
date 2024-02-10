@@ -1,4 +1,7 @@
+import sys
 import random as rnd
+#import colorama
+from colorama import Fore
 
 scandal = 0
 obsession = 10
@@ -24,9 +27,7 @@ def gameLoop():
     playing = True
     
     while playing:
-        print("scandal: " + str(scandal))
-        print("obsession: " + str(obsession))
-        print("food: " + str(food))
+        showstats()
         
         if scandal == 10:
             print("The scandal has become too much to bear, you are forced to sell your house and run away. Hans moves in and squats there")
@@ -51,6 +52,40 @@ def gameLoop():
             curtainRolls()
         if roll == 5 or roll == 6:
             anticsRolls()
+
+def showstats():
+        print("scandal: " + str(scandal))
+        for x in range(0, scandal):
+            if scandal < 4:
+                print(Fore.GREEN + '\u2588', end = ' ')
+            elif scandal < 7:
+                print(Fore.YELLOW + '\u2588', end = ' ')
+            else:
+                print(Fore.RED + '\u2588', end = ' ')
+        print()
+        print(Fore.RESET)
+        
+        print("obsession: " + str(obsession))
+        for x in range(0, obsession):
+            if obsession < 4:
+                print(Fore.GREEN + '\u2588', end = ' ')
+            elif obsession < 7:
+                print(Fore.YELLOW + '\u2588', end = ' ')
+            else:
+                print(Fore.RED + '\u2588', end = ' ')                
+        print()
+        print(Fore.RESET)
+        
+        print("food: " + str(food))
+        for x in range(0, food):
+            if food < 4:
+                print(Fore.RED + '\u2588', end = ' ')
+            elif food < 7:
+                print(Fore.YELLOW + '\u2588', end = ' ')
+            else:
+                print(Fore.GREEN + '\u2588', end = ' ')
+        print()
+        print(Fore.RESET)
 
 def desperationRolls(): #1/2
     global scandal
